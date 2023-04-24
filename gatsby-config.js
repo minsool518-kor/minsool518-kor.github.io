@@ -54,4 +54,5 @@ module.exports = {
     `gatsby-transformer-json`,
     
   ],
+  //pathPrefix: ""
 }
