@@ -29,13 +29,15 @@ export const MosaProvider = ({ children }) => {
   const [message, setMessage] = useState('');
 
   const [ws, setWs] = useState(null);
-  const sendMessage = async (destination, interval) => {
+  const sendMessage =  (destination, interval) => {
     const newTarget = { ...target, ...destination }
     setTarget(newTarget)
     ws.send(JSON.stringify(target));
   }
   useEffect(() => {
-    const socket = new WebSocket('ws://http://118.36.247.42/:8080');
+    // const socket = new WebSocket('ws://http://157.230.38.106:8080');
+    //const socket = new WebSocket('ws://localhost:8080');
+    const socket = new WebSocket('ws://157.230.38.106:8080');
     //const socket = io('http://localhost:5000');
     setWs(socket);
 
